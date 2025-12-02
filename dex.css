@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 ul {
     list-style: none;
 }
@@ -13,7 +17,6 @@ a {
     color: inherit;
 }
 
-
 :root {
     --dark: #03045e;
     --mid: #0077b6;
@@ -21,209 +24,372 @@ a {
     --white: #ffffff;
 }
 
-
+/* ==================== HEADER ==================== */
 .header1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2%;
-    background-color: #03045e;
-    color: #90e0ef;
+    padding: 1.5rem 2%;
+    background-color: var(--dark);
+    color: var(--light);
+    flex-wrap: wrap;
+}
+
+.header1 h1 {
+    font-size: 1.8rem;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
-ul {
+nav ul {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--white);
 }
 
 button {
-    background-color: #0077b6;
-    color: #90e0ef;
+    background-color: var(--mid);
+    color: var(--white);
     border: none;
-    padding: 10px 18px;
+    padding: 12px 24px;
     font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 button:hover {
     transform: scale(1.05);
-    background-color: #0077b6;
-    color: var(--white);
+    background-color: var(--light);
+    color: var(--dark);
 }
 
-
+/* ==================== SECTION ACCUEIL ==================== */
 .sec1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
-    padding: 70px;
+    gap: 80px;
+    padding: 80px 40px;
     background: linear-gradient(135deg, var(--dark), var(--mid));
-    color: #0077b6;
+    color: var(--white);
+    min-height: 80vh;
 }
 
-.description,
+.description {
+    flex: 1;
+    max-width: 600px;
+}
+
+.description h3 {
+    font-size: 1.2rem;
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.description h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--light);
+}
+
+.description button {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
 .image {
     flex: 1;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-img {
-    width: 320px;
+.image img {
+    width: 100%;
+    max-width: 350px;
     border-radius: 80px 0 80px 0;
-    border: 4px solid var(--light);
-
-    margin-left: 150px;
+    border: 5px solid var(--light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-left: 0;
 }
-
 
 #first {
-    background-color: #90e0ef;
-    color: #03045e;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 .projet {
     background: transparent;
     border: 2px solid var(--light);
-    color: #90e0ef;
+    color: var(--light);
 }
 
+.projet:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
 
-.header2,
-.header3,
+/* ==================== HEADERS DES SECTIONS ==================== */
+.header2, 
+.header3, 
 .header4 {
     text-align: center;
-    padding: 60px;
-    font-size: 24px;
+    padding: 40px 20px;
+    font-size: 2rem;
     font-weight: bold;
     color: white;
 }
 
 .header2 {
-    background-color: #03045e;
+    background-color: var(--dark);
 }
 
 .header3 {
-    background-color: #0077b6;
+    background-color: var(--mid);
 }
 
 .header4 {
-    background-color: #03045e;
+    background-color: var(--dark);
 }
 
-
-.main2,
-.main3,
+/* ==================== CONTENU DES SECTIONS ==================== */
+.main2, 
+.main3, 
 .main4 {
-    padding: 100px 20px;
-    text-align: center;
-    line-height: 1.7;
+    padding: 60px 40px;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
-
+/* Section À propos */
 .main2 {
-    background-color: #03045e;
-    color: #0077b6;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
+.main2 p {
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Compétences */
 .main3 {
-    background-color: #0077b6;
+    background-color: var(--mid);
     color: white;
 }
 
+.main3 p {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
 
+.skills-list {
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.skills-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skills-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--light);
+    font-weight: bold;
+}
+
+/* Section Hobbies */
 .main4 {
-    background-color: #03045e;
+    background-color: var(--dark);
     color: white;
 }
 
+.main4 p {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+/* ==================== SECTION PROJETS ==================== */
 .header5 {
     text-align: center;
-    padding: 30px;
-    background-color: #0077b6;
-    color: #000000;
+    padding: 40px 20px;
+    background-color: var(--mid);
+    color: white;
+}
+
+.header5 h2 {
+    font-size: 2rem;
 }
 
 .realisations {
-    background-color: #0077b6;
-    padding: 80px 20px;
+    background-color: var(--mid);
+    padding: 60px 40px 80px;
     text-align: center;
-    color: #070808;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
 }
 
 .project-card {
-    background-color: #0077b6;
-
-    max-width: 800px;
+    background-color: white;
+    max-width: 400px;
     margin: 0 auto;
-    overflow: hidden;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .project-card img {
-    width: 90px;
-
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
 .project-card h3 {
-    margin: 20px 0 10px;
-    font-size: 1.8rem;
-    color: #03045e;
+    margin: 15px 0 10px;
+    font-size: 1.5rem;
+    color: var(--dark);
 }
 
 .project-card p {
-    color: #020303;
+    color: var(--mid);
+    font-size: 0.95rem;
 }
 
-
+/* ==================== FOOTER ==================== */
 .footer {
-    background-color: #03045e;
-    padding: 40px 0;
+    background-color: #1a1a1a;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .footer h3 {
-    color: #0077b6;
-    margin-bottom: 25px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.social-icons img {
-    width: 38px;
-    height: 38px;
-    filter: brightness(0) invert(1);
-    transition: 0.25s ease;
+.social-icons a {
+    color: #ffffff;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.social-icons img:hover {
-    transform: scale(1.15);
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: var(--light);
 }
 
+.social-icons svg {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+}
 
-@media (max-width: 700px) {
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    /* Header responsive */
+    .header1 {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Section Accueil responsive */
     .sec1 {
         flex-direction: column;
         text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .description h2 {
+        font-size: 2rem;
+    }
+    
+    .image img {
+        max-width: 280px;
+    }
+    
+    /* Sections responsive */
+    .main2, 
+    .main3, 
+    .main4 {
+        padding: 40px 20px;
+    }
+    
+    /* Liste de compétences responsive */
+    .skills-list {
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .skills-list li {
+        padding-left: 0;
+    }
+    
+    .skills-list li::before {
+        position: static;
+        margin-right: 10px;
     }
 }
